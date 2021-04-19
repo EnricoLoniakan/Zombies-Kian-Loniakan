@@ -1,0 +1,80 @@
+* {
+	font-family: 'Press Start 2P', cursive; /* allt inom "*" är allmänna css för allt under*/
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+.music {
+    display: none; /* spår av kian som försökte lägga till meny musik men faila :( */
+
+}
+
+body { /* backgrounds bild till hela menyn*/
+
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fgetwallpapers.com%2Fwallpaper%2Ffull%2F6%2Fc%2Fb%2F730366-best-zombie-art-wallpaper-1920x1080-for-computer.jpg&f=1&nofb=1');
+    background-size: cover; /* cover för att få till så att hela skärmen täckts */
+
+}
+
+header { /* vanlig css för headern */
+
+    display: flexbox;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+p { /* vanlig css för p */
+
+display: flexbox;
+text-align: center;
+font-size: 50px;
+color:yellowgreen;
+
+}
+
+.normal { /* css för normal svårighetsgraden */
+
+    display: flexbox;
+	text-align: center;
+	font-size: 1.5em;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+    margin-top: 50px;
+    background-color: yellowgreen;
+    
+
+}
+
+.normal:hover{ /* får till så att det ser snyggare ut på länk knapparna med hover animation och letter-spacing */
+
+    background-color: whitesmoke;
+    letter-spacing: 0.5px;
+
+}
+
+.hard { /* css för hard svårighetsgraden */
+
+    display: flexbox;
+	text-align: center;
+	font-size: 1.5em;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+    margin-top: 50px;
+    background-color: yellowgreen;
+    
+
+}
+
+.hard:hover{ /* får till så att det ser snyggare ut på länk knapparna med hover animation och letter-spacing */
+
+    background-color: whitesmoke;
+    letter-spacing: 0.5px;
+
+}
+

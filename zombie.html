@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://koda.nu/simple.js"> //källan/biblioteket som användes, även själva script elmentet!
+
+
+        var zombies = [];
+        var Points = 0;
+        var i = 0;
+        while (i < 100)
+        {
+        zombies.push({x: random(totalWidth),
+                    y: random(totalHeight),
+                    speed: random(4,7)}); //hastighet på zombisen
+        i += 1;
+        }
+
+        var zombie = {x: random(totalWidth), 
+                     y: random(totalHeight),
+                     speed: random(1,5)};
+    
+        function update()
+        {
+            clearScreen();
+    
+            var i = 0;
+
+          
+    
+            while (i < 10)
+            {
+    
+                var zombie = zombies[i];
+            
+                
+                // if och else satserna nedan ger möjlighet till zombien att röra på sig efter musen up/ner/vänster/höger
+    
+                if (zombie.x < mouse.x){
+                    zombie.x += zombie.speed; 
+                    }
+    
+                else
+                    {
+                    zombie.x -= zombie.speed;
+                    }
+
+                if (zombie.y < mouse.y){
+                    zombie.y += zombie.speed;
+                    picture(zombie.x, zombie.y, "zombie down.png",50,50)} //när zombien går upp byts bilden till passande png (siffrorna längst ut = storlek)
+    
+                else
+                    {
+                    zombie.y -= zombie.speed;
+                    picture(zombie.x, zombie.y, "zombie up.png",50,50)} //när zombien går ner byts bilden till passande png
+    
+                if (distance(mouse, zombie) < 5)
+                {
+                    text(405,500,70, "Game Over", "white"); // pop upp texten då det blir gameover
+                    {
+                        var over = document.createElement("img"); // Gör en variabel till bilden jag ska använda när det blir gameover (använder "over" som smeknamn)
+                        over.src = "gameover.jpg"; // sourcen till bilden
+                        over.width = 500;                //storlek              
+                         over.height = 500;              //storlek
+                         over.setAttribute("style", "margin-left:400px"); //lägger till en attribute till imagen så att jag kan använda en css funktion
+              
+                                            
+                         document.body.appendChild(over); // lägger till bilden inom body 
+
+                     }
+                    stopUpdate(); 
+                    break;
+                }
+                i++;
+            }
+    
+
+        text(10,50,30, "Points: " + Math.floor(Points), "white");
+    
+        }
+    
+    
+
+        document.body.style.backgroundImage = "url('nedladdning.png')"; //backgrunden som läggs inne i spelet
+        //document.body.style.backgroundImage är sättet jag hittade för att föra in en css funktion in i javascript
+    
+    
+    
+    </script>
+    
+
+
+</body>
+</html>

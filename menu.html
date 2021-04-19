@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!--css länk-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> <!--google font länk-->
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Press+Start+2P&display=swap" rel="stylesheet"> <!--länkar google fontar-->
+    <title>Document</title>
+
+    <script>
+        var bleep = new Audio(); //skapar med javascript en variabel vilket är till ett beep ljud för menyn (bleep = smeknamnet)
+        bleep.src = "button.mp3"; //själva sourcen av bleep ljudet
+
+    </script>
+     
+
+</head>
+<body>
+    <header> Undead Survival</header> <!--header för menyn-->
+    <p>8bit edition</p>
+
+    <div class= normal> <!--länken som tar dig till svårighetsgradsidan-->
+    <a href="svårighet.html" onmousedown="bleep.play()">PLAY</a> <!--med hjälpen av onmousedown kan ljudet som jag valt spelas upp då man klickar
+    på länk-knappen-->
+    </div>
+
+
+</body>
+</html>
