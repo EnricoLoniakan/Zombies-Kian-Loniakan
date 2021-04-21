@@ -11,7 +11,7 @@
 
 
         var zombies = [];
-        var Points = 0;
+        var points = 0; //olika variabler
         var i = 0;
         while (i < 100)
         {
@@ -31,9 +31,10 @@
     
             var i = 0;
 
+            points = points + 1 //räknar in points
           
     
-            while (i < 10)
+            while (i < 10) //mängd av zombies
             {
     
                 var zombie = zombies[i];
@@ -59,7 +60,15 @@
                     zombie.y -= zombie.speed;
                     picture(zombie.x, zombie.y, "zombie up.png",50,50)} //när zombien går ner byts bilden till passande png
     
-                if (distance(mouse, zombie) < 5)
+
+                if (keyboard.space ) {   //fixar en if sats så att det går att ha en funktion åt space
+
+                    points = points + 10
+
+
+                }
+
+                if (distance(mouse, zombie) < 5) //om distancesen mellan mus pekaren och en zombie är mindre än 5 då gäller allt under
                 {
                     text(405,500,70, "Game Over", "white"); // pop upp texten då det blir gameover
                     {
@@ -73,18 +82,23 @@
                          document.body.appendChild(over); // lägger till bilden inom body 
 
                      }
-                    stopUpdate(); 
+                    stopUpdate(); //stoppar spelet
                     break;
                 }
                 i++;
             }
     
 
-        text(10,50,30, "Points: " + Math.floor(Points), "white");
+            text(10,50,30, "Points: " + points, "white"); //En text vid sidan av skärmen som visar antal poäng man har samlat
     
         }
     
-    
+            if (points > 1000){
+
+                text(10,50,30, "Points: " + points , "yellow"); // byter färg på texten efter en viss poäng mängd
+
+            }
+
 
         document.body.style.backgroundImage = "url('nedladdning.png')"; //backgrunden som läggs inne i spelet
         //document.body.style.backgroundImage är sättet jag hittade för att föra in en css funktion in i javascript
